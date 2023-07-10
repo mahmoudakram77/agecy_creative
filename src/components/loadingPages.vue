@@ -81,19 +81,19 @@
 export default {
   data() {
     return {
-      loading: null,
+      loading: false,
     };
   },
   methods: {
     isLoading() {
-      this.loading = !this.loading;
+      this.loading = true;
       setTimeout(() => {
-        this.loading = !this.loading;
+        this.loading = false;
       }, 3000);
     },
   },
   created() {
-    window.addEventListener("load", this.isLoading);
+    this.isLoading();
   },
 };
 </script>
